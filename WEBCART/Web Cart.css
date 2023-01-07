@@ -1,0 +1,245 @@
+body {
+  font-family: "Abel", sans-serif;
+  font-size: large;
+  background-color: white;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  cursor: pointer;
+}
+a.nav-link {
+  margin-right: 20px;
+  font-weight: 700;
+}
+.navbar-light .navbar-nav .active > .nav-link:hover {
+  color: #ffffff;
+}
+
+nav.fill ul li a.nav-link {
+  transition: all 0.5s;
+}
+
+nav.fill ul li a.nav-link:after {
+  text-align: left;
+  content: ".";
+  margin: 0;
+  opacity: 0;
+}
+
+nav.fill ul li a.nav-link:hover {
+  color: white;
+  z-index: 1;
+}
+
+nav.fill ul li a.nav-link:hover:after {
+  z-index: -10;
+  animation: fill 1s forwards;
+  opacity: 1;
+}
+
+nav.fill ul li a.nav-link {
+  position: relative;
+}
+
+nav.fill ul li a.nav-link:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: ".";
+  color: transparent;
+  background: #aaa;
+  height: 1px;
+}
+section#mack-book {
+  margin-bottom: 100px;
+}
+
+.carousel-indicators li {
+  width: 20px;
+  height: 8px;
+  border: none;
+  border-radius: 4px;
+  background-color: #cecece;
+}
+.carousel-indicators li.active {
+  width: 35px;
+  height: 10px;
+  border-radius: 8px;
+  background-image: linear-gradient(145deg, #f1c40f, #e67e22);
+}
+
+.mack {
+  padding: 10% 4%;
+}
+
+.mack p {
+  margin-bottom: 30px;
+}
+
+.mack a.mack-btn {
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  border: 2px solid black;
+  padding: 15px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.mack a.mack-btn:hover {
+  background-color: white;
+  color: black;
+}
+
+svg.bi.bi-arrow-right {
+  color: white;
+  font-size: 20px;
+  transition: 0.5s;
+}
+
+a.mack-btn:hover svg.bi.bi-arrow-right {
+  transform: rotate(-180deg);
+  color: black;
+}
+
+/* End  */
+
+/* section Smart phone start  */
+
+section#smartphone {
+  margin-bottom: 100px;
+}
+
+.smartphone-header {
+  margin-bottom: 50px;
+}
+
+.smartphone-header h5 {
+  font-weight: bold;
+  cursor: pointer;
+  background: -webkit-linear-gradient(145deg, #f1c40f, #e67e22);
+  -webkit-text-fill-color: transparent;
+}
+
+a.smartphone-btn {
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  border: 2px solid black;
+  padding: 15px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  transition: 1s;
+  cursor: pointer;
+}
+
+a.smartphone-btn:hover {
+  background-color: white;
+  color: black;
+}
+
+a.smartphone-btn:hover svg.bi.bi-arrow-right {
+  transform: rotate(-180deg);
+  color: black;
+}
+
+/* End  */
+
+/* section Laptop start  */
+
+section#laptop {
+  margin-bottom: 100px;
+}
+
+.laptop-header {
+  margin-bottom: 50px;
+}
+
+.laptop-header h5 {
+  font-weight: bold;
+  cursor: pointer;
+  background: -webkit-linear-gradient(145deg, #f1c40f, #e67e22);
+  -webkit-text-fill-color: transparent;
+}
+
+a.laptop-btn {
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  border: 2px solid black;
+  padding: 15px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  transition: 1s;
+  cursor: pointer;
+}
+
+a.laptop-btn:hover {
+  background-color: white;
+  color: black;
+}
+
+a.laptop-btn:hover svg.bi.bi-arrow-right {
+  transform: rotate(-180deg);
+  color: black;
+}
+
+/* End  */
+
+/* Categories start  */
+
+hr {
+  width: 130px;
+  background-image: linear-gradient(145deg, #f1c40f, #e67e22);
+  height: 10px;
+  border: none;
+  border-radius: 50px;
+  margin-bottom: 50px;
+}
+.categories-card {
+  box-shadow: 0px 5px 15px gray;
+  padding: 5%;
+}
+.mt-5 {
+  margin-top: 6rem !important;
+}
+/* End  */
+
+/* Footer  */
+footer {
+  padding: 5%;
+}
+/* End  */
+
+/* Nav animation */
+
+@-webkit-keyframes fill {
+  0% {
+    width: 0%;
+    height: 1px;
+  }
+  50% {
+    width: 100%;
+    height: 1px;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    background: #333;
+  }
+}
