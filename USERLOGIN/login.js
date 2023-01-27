@@ -25,8 +25,8 @@ const btn = document
     const passRegularExpression =
       /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
     if (
-      nameRegex.test(usrName) === true ||
-      passRegularExpression.test(passName) === true
+      nameRegex.test(usrName) === true && passName
+ 
     ) {
       window.location.href = "Web Cart.html";
     } else {

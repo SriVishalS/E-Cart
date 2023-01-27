@@ -1,0 +1,255 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: white;
+  font-family: "poppins", sans-serif;
+}
+a{
+  text-decoration: none;
+  color: #000;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.container {
+  width: 100vw;
+  min-height: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.card {
+  position: relative;
+  width: calc(30% - 20px);
+  min-height: 300px;
+  background: #fff;
+  margin: 10px;
+  box-sizing: border-box;
+  border: 1px solid orange;
+  /* box-shadow: 0px 5px 15px grey; */
+}
+.card .imgBx {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+}
+.card .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+}
+.card .details {
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card .details .content {
+  padding: 20px;
+  box-sizing: border-box;
+}
+.card .details .content h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+  line-height: 0.85em;
+  font-weight: 600;
+}
+.card .details .content h2 span {
+  font-size: 14px;
+  color: #777;
+}
+.card .details .content ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.card .details .content ul li {
+  list-style: none;
+  margin-left: 2px;
+}
+.card .details .content ul li a {
+  color: #fff;
+  border: none;
+}
+.card .details .content ul li:nth-child(1) a {
+  background: #3b5995;
+}
+.card .details .content ul li:nth-child(2) a {
+  background: #55acee;
+}
+.card .details .content ul li:nth-child(3) a {
+  background: #b31217;
+}
+.card .details .content ul li:nth-child(4) a {
+  background: #0077b5;
+}
+.card .details .content a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 5px 10px;
+  margin-top: 10px;
+  border: 2px solid #262626;
+  color: #262626;
+  font-weight: 500;
+}
+.card .details .content a:hover {
+  background: #262626;
+  color: #fff;
+}
+
+.nav [type="checkbox"] {
+  display: none;
+}
+.list-none {
+  list-style: none;
+}
+.floating-li > li {
+  display: inline-block;
+}
+.hamburger {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+  overflow: hidden;
+  padding: 0;
+  width: 80px;
+  height: 70px;
+  font-size: 0;
+  text-indent: -9999px;
+  cursor: pointer;
+  transition: background 0.5s;
+}
+.hamburger span {
+  display: block;
+  position: absolute;
+  top: 30px;
+  left: 18px;
+  right: 18px;
+  height: 3px;
+  background: black;
+}
+.hamburger span::before,
+.hamburger span::after {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: black;
+  content: "";
+}
+.hamburger span::before {
+  top: -20px;
+}
+.hamburger span::after {
+  bottom: -20px;
+}
+/** Hamburger to "x" (htx). Takes on a hamburger shape, bars slide * down to center and transform into an "x". */
+.hamburger--htx {
+  background-color: transparent;
+}
+.hamburger--htx span {
+  transition: background 0s 0.3s;
+}
+.hamburger--htx span::before,
+.hamburger--htx span::after {
+  transition-duration: 0.3s, 0.3s;
+  transition-delay: 0.3s, 0s;
+}
+.hamburger--htx span::before {
+  transition-property: top, transform;
+}
+.hamburger--htx span::after {
+  transition-property: bottom, transform;
+}
+/* active state, i.e. menu open */
+[type="checkbox"]:checked ~ label {
+  background-color: transparent;
+}
+[type="checkbox"]:checked ~ label span {
+  background: none;
+}
+[type="checkbox"]:checked ~ label span::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+[type="checkbox"]:checked ~ label span::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+[type="checkbox"]:checked ~ label span::before,
+[type="checkbox"]:checked ~ label span::after {
+  transition-delay: 0.3s, 0.3s;
+}
+.menu {
+  height: 0;
+  overflow: hidden;
+  width: 100%;
+  transition: all 0.65s;
+  background-color: white;
+  position: relative;
+  margin: 0;
+  padding: 0 96px;
+}
+.menu li {
+  height: 96px;
+  line-height: 96px;
+  border-bottom: 1px solid #000;
+  opacity: 0;
+  transition: opacity 0.6s;
+}
+.menu li:last-child {
+  border-bottom: none;
+}
+[type="checkbox"]:checked ~ label ~ .menu {
+  height: 100px;
+}
+[type="checkbox"]:checked ~ label ~ .menu li {
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    width: 100%;
+  }
+}
+@media (max-width: 991px) {
+  .card {
+    width: calc(70% - 20px);
+    margin: 10px auto;
+  }
+}
+@media (max-width: 768px) {
+  .card {
+    width: calc(70% - 20px);
+    margin: 10px auto;
+  }
+  .card .imgBx {
+    position: relative;
+    width: 100%;
+    height: 200px;
+  }
+  .card .details {
+    position: relative;
+    width: 100%;
+    height: 200px;
+  }
+}
+@media (max-width: 480px) {
+  .card {
+    width: calc(100% - 40px);
+    margin: 10px auto;
+  }
+}
