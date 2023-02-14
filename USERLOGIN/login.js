@@ -11,25 +11,31 @@ function removeClass() {
     parent.classList.remove("focus");
   }
 }
+const firebaseConfig = {
+  apiKey: "AIzaSyC7Ah7y1PjKxw9IcGAEqXbuzBXrHAgPx58",
+  authDomain: "web-cart-1a9b3.firebaseapp.com",
+  projectId: "web-cart-1a9b3",
+  storageBucket: "web-cart-1a9b3.appspot.com",
+  messagingSenderId: "719935465606",
+  appId: "1:719935465606:web:4a1d0b77074957e96ac907",
+};
+firebase.initializeApp(firebaseConfig);
+function login() {
+  var email = document.getElementById("mailInp").value;
+  var password = document.getElementById("passInp").value;
 
-inputs.forEach((input) => {
-  input.addEventListener("focus", addClass);
-  input.addEventListener("blur", removeClass);
-});
-const btn = document
-  .getElementById("loginBtn")
-  .addEventListener("click", () => {
-    let usrName = document.getElementById("userInp").value;
-    let passName = document.getElementById("passInp").value;
-    const nameRegex = /^[a-zA-Z\-]+$/;
-    const passRegularExpression =
-      /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
-    if (
-      nameRegex.test(usrName) === true && passName
- 
-    ) {
-      window.location.href = "Web Cart.html";
-    } else {
-      alert("Please Check Your Login Credentials");
-    }
-  });
+  firebase
+    .auth()
+    .signInWithEmailAndPassword(email, password)
+    .then(function (user) {
+      // login successful, redirect to home page
+      window.location.href = `../Web Cart.html`;
+    })
+    .catch(function (error) {
+      // login failed, display error message
+      var errorCode = error.code;
+
+      var errorMessage = error.message;
+      alert(errorMessage);
+    });
+}

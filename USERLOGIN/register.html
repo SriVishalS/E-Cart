@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+      <link rel="icon" href="images/logo.png" type="image/gif" sizes="16x16">
+      <title>WEB CART</title>
+      <link rel="stylesheet" type="text/css" href="login.css" />
+      <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet" />
+      <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+      <img class="wave" src="../img/wave.png" />
+      <div class="container">
+            <div class="img"></div>
+            <div class="login-content">
+                  <div class="form">
+                        <img src="../img/avatar.svg" class="avatarpic" />
+                        <br><br>
+                        <div class="input-div one">
+                              <div class="i">
+                                    <i class="fas fa-user"></i>
+                              </div>
+                              <div class="div">
+                                    <input type="text" class="input" id="mailInp" placeholder="Email ID" />
+                              </div>
+                        </div>
+                        <div class="input-div pass">
+                              <div class="i">
+                                    <i class="fas fa-lock"></i>
+                              </div>
+                              <div class="div">
+                                    <input type="password" class="input" id="passInp"
+                                          placeholder="Set A Strong PassWord" />
+                              </div>
+                        </div>
+                        <button class="btn" id="loginBtn" onclick="signin()">Register</button>
+                        <a href="../index.html">Already Have Account The Log in</a>
+                  </div>
+            </div>
+      </div>
+      <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+      <script src="reg.js"></script>
+</body>
+
+</html>
