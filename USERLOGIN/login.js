@@ -29,7 +29,7 @@ function login() {
     .signInWithEmailAndPassword(email, password)
     .then(function (user) {
       // login successful, redirect to home page
-      window.location.href = `../Web Cart.html`;
+      window.location.href = `Web Cart.html`;
     })
     .catch(function (error) {
       // login failed, display error message
